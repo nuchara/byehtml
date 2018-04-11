@@ -1,91 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
 </head>
-
 <body>
-    <div id="L" style="display: none">
-        <h3>Login</h3>
-        <input type="text" placeholder="อีเมล" id="email-login">
-        <input type="password" placeholder="รหัสผ่าน" id="pass-login">
-        <button onclick="clickLogin()">Login</button>
-    </div>
-    <div id="R">
-        <h3>Register</h3>
-        <input type="text" placeholder="ชื่อ" id="name">
-        <input type="text" placeholder="นามสกุล" id="lastname">
-        <br>
-        <br>
-        <input type="text" placeholder="อีเมล" id="email">
-        <br>
-        <br>
-        <input type="password" placeholder="รหัสผ่าน" id="password">
-        <br>
-        <br>
-        <button onclick="clickRegister()">Register</button>
-    </div>
-    <script>
-        const name = document.getElementById("name");
-        const lastname = document.getElementById("lastname");
-        const email = document.getElementById("email");
-        const password = document.getElementById("password");
-
-        const emailL = document.getElementById("email-login");
-        const passL = document.getElementById("pass-login")
-
-        var database = [];
-        function clickRegister() {
-            document.getElementById("R").style.display = "none";
-            document.getElementById("L").style.display = "block";
-
-            let nameVal = name.value;
-            let lastnameVal = lastname.value;
-            let emailVal = email.value;
-            let passwordVal = password.value;
-
-            database.push({ Name: "" + nameVal + "", Lastname: "" + lastnameVal + "", Email: "" + emailVal + "", Password: "" + passwordVal + "" });
-            console.log(database);
-        }
-
-        function clickLogin() {
-
-
-            for (i = 0; i < database.length; i++) {
-                for (var prop in database[i]) {
-                    if (prop == "Email") {
-
-                        if (emailL.value == database[i][prop]) {
-                            var checkUser = i
-                            var checkEmail = 1;
-                        } else {
-                            var checkEmail = 0;
-                        }
-                    }
-
-                }
-            }
-
-            if (checkUser == undefined) {
-
-                checkPass = 0;
-            } else {
-                if (passL.value == database[checkUser].Password) {
-
-                    checkPass = 1;
-                } else { checkPass = 0; }
-
-            }
-
-            if (checkEmail == 1) {
-                if (checkPass == 1) { alert("OK") } else { alert("Password ผิด") }
-            } else { alert("Email ผิด") }
-        }
-    </script>
+        <div>
+            <h1>Register</h1>
+            <div>
+                NAME : <input type="text"  >
+                <br><br>
+                LASTNAME : <input type="text">
+                <br><br>
+                AGE : <input type="text">
+                <br><br>
+                SEX : <input type="text">
+                <br><br>
+                USERNAME : <input type="text">
+                <br><br>
+                PASSWORD : <input type="text">
+                <br><br>
+                <a href="#" class="btn btn-info" role="button">REGISTER</a>
+            </div>
+        </div>
 </body>
-
 </html>
